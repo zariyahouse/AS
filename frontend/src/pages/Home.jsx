@@ -16,6 +16,7 @@ import { Rsvp } from "../components/wedding/Rsvp";
 import { Guestbook } from "../components/wedding/Guestbook";
 import { Contact, Livestream } from "../components/wedding/ContactLivestream";
 import { Footer } from "../components/wedding/Footer";
+import { AmbientMusic } from "../components/wedding/AmbientMusic";
 import { sectionVisibility } from "../config/weddingConfig";
 
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
       <GoldenThread />
       <TwoRings />
       <StickyNav lenis={lenis} />
+      <AmbientMusic />
 
       <main>
         <Hero />
