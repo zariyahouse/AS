@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cinzel:wght@400;500;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   ROYAL KERALA CHRISTIAN — GLOBAL DESIGN SYSTEM
+   ============================================================ */
+
+:root {
+  /* Palette tokens */
+  --ivory: #FBF3E7;
+  --ivory-deep: #F3E7D0;
+  --parchment-shadow: #E7D6B8;
+  --gold: #B8860B;
+  --gold-bronze: #C9A15D;
+  --gold-light: #E8D399;
+  --gold-pale: #F0E2B8;
+  --groom-rose: #D9A9C4;
+  --groom-lavender: #C9B6DA;
+  --bride-teal: #0E5C57;
+  --bride-teal-light: #1B6E6A;
+  --bride-blue: #264D73;
+  --malachite: #0B4A34;
+  --malachite-light: #154D3A;
+  --bottle-green: #1C2B24;
+  --oxblood: #3A1220;
+
+  /* shadcn tokens mapped to theme */
+  --background: 39 60% 95%;
+  --foreground: 150 20% 14%;
+  --card: 39 55% 92%;
+  --card-foreground: 150 20% 14%;
+  --popover: 39 55% 94%;
+  --popover-foreground: 150 20% 14%;
+  --primary: 43 89% 38%;
+  --primary-foreground: 39 60% 96%;
+  --secondary: 168 68% 20%;
+  --secondary-foreground: 39 60% 96%;
+  --muted: 39 30% 85%;
+  --muted-foreground: 150 12% 32%;
+  --accent: 43 45% 65%;
+  --accent-foreground: 150 20% 14%;
+  --destructive: 350 60% 35%;
+  --destructive-foreground: 39 60% 96%;
+  --border: 43 40% 70%;
+  --input: 43 40% 70%;
+  --ring: 43 89% 38%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: auto; /* lenis handles smooth scroll */
+}
+
+body {
+  margin: 0;
+  background-color: var(--ivory);
+  color: var(--bottle-green);
+  font-family: 'Spectral', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Paper grain — a subtle SVG noise layered globally */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+
+::selection {
+  background: var(--gold-bronze);
+  color: var(--ivory);
+}
+
+/* ---- Typography helpers ---- */
+.font-display { font-family: 'Cormorant Garamond', serif; }
+.font-body { font-family: 'Spectral', Georgia, serif; }
+.font-accent { font-family: 'Cinzel', serif; }
+.tnum { font-feature-settings: "onum" 1, "lnum" 0; }
+
+/* ---- Custom cursor: hide native on desktop (wedding page only) ---- */
+@media (hover: hover) and (pointer: fine) {
+  body.hide-cursor,
+  body.hide-cursor * { cursor: none !important; }
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--ivory-deep); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--gold-bronze), var(--gold));
+  border-radius: 9px;
+}
+
+/* ============================================================
+   AMBIENT KEYFRAMES (site always feels alive)
+   ============================================================ */
+@keyframes breathe-glow {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(184,134,11,0.25)); }
+  50% { filter: drop-shadow(0 0 14px rgba(232,211,153,0.65)); }
+}
+.ambient-glow { animation: breathe-glow 5s ease-in-out infinite; }
+
+@keyframes shimmer-sweep {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.gold-shimmer-text {
+  background: linear-gradient(100deg, var(--gold) 20%, var(--gold-light) 40%, #fff7dd 50%, var(--gold-light) 60%, var(--gold) 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-sweep 6s linear infinite;
+}
+
+@keyframes slow-spin { to { transform: rotate(360deg); } }
+.slow-spin { animation: slow-spin 60s linear infinite; }
+.slow-spin-rev { animation: slow-spin 80s linear infinite reverse; }
+
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  25% { opacity: 0.85; transform: scaleY(1.08); }
+  50% { opacity: 0.95; transform: scaleY(0.96); }
+  75% { opacity: 0.9; transform: scaleY(1.04); }
+}
+.flame-flicker { animation: flicker 1.6s ease-in-out infinite; transform-origin: bottom center; }
+
+@keyframes draw-stroke {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Manuscript plate — ornamental container replacing boxy cards */
+.plate {
+  position: relative;
+  background:
+    radial-gradient(120% 120% at 50% 0%, rgba(255,255,255,0.35), transparent 60%),
+    var(--ivory);
+  box-shadow: inset 0 0 0 1px rgba(184,134,11,0.35), 0 20px 50px -30px rgba(28,43,36,0.5);
+}
+
+.gold-hairline {
+  background: linear-gradient(90deg, transparent, var(--gold-bronze) 20%, var(--gold) 50%, var(--gold-bronze) 80%, transparent);
+  height: 1px;
+}
+
+.text-shadow-warm { text-shadow: 0 1px 0 rgba(255,255,255,0.4), 0 2px 20px rgba(184,134,11,0.15); }
+
+/* Hide default cursor globally handled above; keep links accessible focus */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-glow, .gold-shimmer-text, .slow-spin, .slow-spin-rev, .flame-flicker {
+    animation: none !important;
+  }
+}
