@@ -18,14 +18,14 @@ export const couple = {
     short: "Abel",
     parents: "Son of Rev. Fr. Koshy Thomas & Mrs. Beena Koshy",
     photo:
-      "https://images.unsplash.com/photo-1774814324523-70073c02e6ad?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+      "https://drive.google.com/file/d/1r8eHSpAOGOp2INiBbLmXnG0s7S-509cY/view?usp=drive_link",
   },
   bride: {
     name: "Merlyn Grace George",
     short: "Merlyn",
     parents: "Daughter of Mr. Shaji George & Mrs. Sheeja George",
     photo:
-      "https://images.unsplash.com/photo-1779269949837-f6b06b3ebdc6?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200",
+      "https://drive.google.com/file/d/16zdenBfrWL7q_8MtxHnYR1_DjBxTF3k2/view?usp=drive_link",
   },
 };
 
@@ -128,11 +128,8 @@ export const dressCodeSwatches = {
 
 // ---- Gallery (swap URLs freely; add more entries anytime) ----
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1774814324523-70073c02e6ad?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-  "https://images.unsplash.com/photo-1779269949837-f6b06b3ebdc6?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-  "https://images.unsplash.com/photo-1781154109545-7a75cd1b3d9e?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-  "https://images.unsplash.com/photo-1764286954620-28029fbae9b6?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
-  "https://images.unsplash.com/photo-1778184425021-fd081a57a374?crop=entropy&cs=srgb&fm=jpg&q=85&w=1400",
+  "https://drive.google.com/file/d/16zdenBfrWL7q_8MtxHnYR1_DjBxTF3k2/view?usp=drive_link",
+  "https://drive.google.com/file/d/1r8eHSpAOGOp2INiBbLmXnG0s7S-509cY/view?usp=drive_link",
 ];
 
 // ---- Jigsaw source (fixed, landscape ~4:3, centred subject) ----
