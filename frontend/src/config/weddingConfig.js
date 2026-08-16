@@ -7,8 +7,8 @@
 // ---- Optional section visibility (drives nav + rendering) ----
 export const sectionVisibility = {
   dressCode: true,
-  rsvp: true,
-  contact: true,
+  rsvp: false,
+  contact: false,
   livestream: true,
 };
 
@@ -63,7 +63,7 @@ export const events = [
     date: "28 December 2026",
     time: "10:30 AM",
     venue: "Mount Tabor Dayara",
-    address: "Pathanapuram-Mancode Rd, Mancode, Pathanapuram, Kerala 689695, India",
+    address: "Pathanapuram, Kerala 689695, India",
     plusCode: "3VQ4+VX Mancode, Kerala, India",
     mapsQuery: "Mount Tabor Dayara Mancode Pathanapuram Kerala",
     thread: "bride",
@@ -79,7 +79,7 @@ export const events = [
     date: "28 December 2026",
     time: "Following the ceremony",
     venue: "New Mangalya Auditorium",
-    address: "Kallumkadavu, Pathanapuram, Pattazhy Vadakkekara, Kerala 689695, India",
+    address: "Kallumkadavu, Pathanapuram, Kerala 689695, India",
     plusCode: "3VV3+R8 Pathanapuram, Kerala, India",
     mapsQuery: "New Mangalya Auditorium Kallumkadavu Pathanapuram Kerala",
     thread: "bride",
